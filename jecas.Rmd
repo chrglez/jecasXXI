@@ -304,14 +304,14 @@ class: inverse, middle, center
 
 ---
 
-Actualmente, el turismo genera 16099 millones de euros en Canariaá, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR^[Estudio IMPACTUR Canarias 2018] [`r fa("external-link-alt", fill = "#43418a")`](https://www.exceltur.org/impactur-2/#)
+Actualmente, el turismo genera 16099 millones de euros en Canarias, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR<sup>1</sup> [`r fa("external-link-alt", fill = "#43418a")`](https://www.exceltur.org/impactur-2/#)
 
 
 Dada la relevancia del turismo en la economía canaria, y más concretamente en la isla de Lanzarote, así como el acceso a la cantidad ingente de información que hay disponible a través del ISTAC [`r fa("external-link-alt", fill = "#43418a")`](http://www.gobiernodecanarias.org/istac/) resulta necesario fomentar el conocimiento y la difusión del mismo.
 
 Con este fin se ha elaborado la aplicación Panel de Indicadores de Turismo de Lanzarote [`r fa("external-link-alt", fill = "#43418a")`](https://datosdelanzarote.shinyapps.io/turismo_dashboard/) que pretende ser un ejemplo de las posibilidades que ofrece la explotación de los datos en R.
 
-
+.footnote[1 Estudio IMPACTUR Canarias 2018.]
 
 ---
 
@@ -409,18 +409,22 @@ class: inverse, middle, center
 - Desarrollo del 'Panel de Indicadores de Turismo de Lanzarote'.
     - Brinda a los profesionales del sector toda la información relacionada con el turismo de Lanzarote en un solo lugar para su consulta y análisis.
     
-- **Limitaciones**
-    - Cambios en la API
+- **Limitaciones**  Cambios en la API
+
+---
+class: middle, center
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Por ello, considero que las Oficinas Centrales de Estadística son los organismos adecuados para liderar el camino de la toma de decisiones basadas en datos, y para el asesoramiento en la gobernanza, gestión y calidad de datos administrativos para fines analíticos (fin de hilo)</p>&mdash; Alberto Glez. Yanes (@algoya_dat) <a href="https://twitter.com/algoya_dat/status/1299591956172075008?ref_src=twsrc%5Etfw">August 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ---
 class: inverse, middle, center
 
-# Desarrollo de dashboard para la monitorización de datos en destino turístico.
-## El caso del Panel de Indicadores de Turismo de Lanzarote
+## Desarrollo de dashboard para la monitorización de datos en destino turístico.
+# El caso del Panel de Indicadores de Turismo de Lanzarote
 
-Christian González-Martel `r fa("twitter", fill = "white")` `r fa("github", fill = "white")` @chrglez
+Christian González-Martel [`r fa("twitter", fill = "white")`](https://twitter.com/chrglez/) [`r fa("github", fill = "white")`](https://github.com/chrglez) @chrglez
 
-José Manuel Cazorla-Artiles `r fa("twitter", fill = "white")`  `r fa("github", fill = "white")` @jmcartiles
+José Manuel Cazorla-Artiles [`r fa("twitter", fill = "white")`](https://twitter.com/jmcartiles/) [`r fa("github", fill = "white")`](https://github.com/jmcartiles) @jmcartiles
 
 
 ## ¡Gracias!
