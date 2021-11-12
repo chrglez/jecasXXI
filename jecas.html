@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Panel de datos de Turismo de Lanzarote</title>
+    <title>Desarrollo de dashboard para la monitorización de datos en destino turístico</title>
     <meta charset="utf-8" />
     <meta name="author" content="Christian González-Martel, José M. Cazorla-Artiles" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -260,6 +260,19 @@ df &lt;- istacbase(selectedID, POSIXct = T)
 ```
 
 
+```r
+head(df)
+```
+
+```
+##      Islas Grupos de edad       Sexos Periodos  valor      fecha periodicidad
+## 1 CANARIAS          TOTAL AMBOS SEXOS  2021M07 254101 2021-07-01      mensual
+## 2 CANARIAS          TOTAL     Hombres  2021M07 110940 2021-07-01      mensual
+## 3 CANARIAS          TOTAL     Mujeres  2021M07 143161 2021-07-01      mensual
+## 4 CANARIAS          TOTAL AMBOS SEXOS  2021M06 274475 2021-06-01      mensual
+## 5 CANARIAS          TOTAL     Hombres  2021M06 122906 2021-06-01      mensual
+## 6 CANARIAS          TOTAL     Mujeres  2021M06 151569 2021-06-01      mensual
+```
 ---
 
 ## ggplot (visualización)
@@ -285,7 +298,7 @@ ggplot (df %&gt;%
 
 class: center
 
-![](jecas_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+![](jecas_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -295,14 +308,13 @@ class: inverse, middle, center
 
 ---
 
-Actualmente, el turismo genera 16099 millones de euros en Canariaá, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#43418a;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.exceltur.org/impactur-2/#)
+Actualmente, el turismo genera 16099 millones de euros en Canariaá, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR^[Estudio IMPACTUR Canarias 2018] [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#43418a;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.exceltur.org/impactur-2/#)
 
 
 Dada la relevancia del turismo en la economía canaria, y más concretamente en la isla de Lanzarote, así como el acceso a la cantidad ingente de información que hay disponible a través del ISTAC [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#43418a;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](http://www.gobiernodecanarias.org/istac/) resulta necesario fomentar el conocimiento y la difusión del mismo.
 
 Con este fin se ha elaborado la aplicación Panel de Indicadores de Turismo de Lanzarote [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#43418a;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://datosdelanzarote.shinyapps.io/turismo_dashboard/) que pretende ser un ejemplo de las posibilidades que ofrece la explotación de los datos en R.
 
-Esta aplicación emplea el la API ISTACbase a través de la librería istacbaser. Se usa la información obtenida de la Encuesta de Gasto Turístico de Canarias.
 
 
 ---
@@ -348,7 +360,7 @@ La informacion sobre la serie de llegadas proporcionadas por FRONTUR puede ser c
 
 ### Gasto
 
-La información de gasto analiza el gasto total, el gasto por turista y el gasto por turista y día. La evolución del gasto de los principales mercados de origen proviene de la Encuesta de Gasto Turístico. La evolución se puede analizar con frecuencia anual o trimestral. Existen varios filtros para analizar el mercado de origen incluso con un desglose por concepto de gasto.
+La información de gasto analiza el gasto total, el gasto por turista y el gasto por turista y día. La evolución del gasto de los principales mercados de origen proviene de la Encuesta de Gasto Turístico. La evolución se puede analizar con frecuencia anual o trimestral. Existen varios filtros para analizar el mercado de origen, incluso con un desglose por concepto de gasto.
 
 ![Gasto medio por turista y día](images/gasto.png)
 
@@ -376,7 +388,7 @@ Con el perfil del turista se intenta analizar las características del turista e
 
 
 ---
-![Mapa de oferta aljativa por municipios](images/mapa.png)
+![Mapa de oferta alojativa por municipios](images/mapa.png)
 
 ---
 
@@ -396,18 +408,19 @@ class: inverse, middle, center
 
 - El sector público está tomando conciencia de la necesidad de que sus datos estén abiertos.
 
-- Desarrollo de una librería de R que manejase la API ISTACbase
+- Desarrollo de una librería de R que manejase la API ISTACbase.
 
-- Desarrollo del 'Panel de Indicadores de Turismo de Lanzarorte'
+- Desarrollo del 'Panel de Indicadores de Turismo de Lanzarote'.
     - Brinda a los profesionales del sector toda la información relacionada con el turismo de Lanzarote en un solo lugar para su consulta y análisis.
     
-- *Limitaciones*
-    - Cambios en la API.
+- **Limitaciones**
+    - Cambios en la API
 
 ---
 class: inverse, middle, center
 
-# Panel de datos de Turismo de Lanzarote: Una aplicación de datos abiertos en la administración pública
+# Desarrollo de dashboard para la monitorización de datos en destino turístico.
+## El caso del Panel de Indicadores de Turismo de Lanzarote
 
 Christian González-Martel &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:white;position:relative;"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="rfa" style="height:0.75em;fill:white;position:relative;"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; @chrglez
 

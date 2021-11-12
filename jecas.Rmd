@@ -1,6 +1,6 @@
 ---
-title: "Panel de datos de Turismo de Lanzarote"
-subtitle: "Una aplicación de datos abiertos en la administración pública"
+title: "Desarrollo de dashboard para la monitorización de datos en destino turístico"
+subtitle: "El caso del Panel de Indicadores de Turismo de Lanzarote"
 author: "Christian González-Martel, José M. Cazorla-Artiles"
 date: "JECAS 2021"
 output:
@@ -254,7 +254,9 @@ En una línea de código el dataset completo está listo para usarse:
 df <- istacbase(selectedID, POSIXct = T)
 ```
 
-
+```{r}
+head(df)
+```
 ---
 
 ## ggplot (visualización)
@@ -302,14 +304,13 @@ class: inverse, middle, center
 
 ---
 
-Actualmente, el turismo genera 16099 millones de euros en Canariaá, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR [`r fa("external-link-alt", fill = "#43418a")`](https://www.exceltur.org/impactur-2/#)
+Actualmente, el turismo genera 16099 millones de euros en Canariaá, el 35% del conjunto de su economía, y 343899 empleos, un 40.4% del total, según el último estudio de IMPACTUR^[Estudio IMPACTUR Canarias 2018] [`r fa("external-link-alt", fill = "#43418a")`](https://www.exceltur.org/impactur-2/#)
 
 
 Dada la relevancia del turismo en la economía canaria, y más concretamente en la isla de Lanzarote, así como el acceso a la cantidad ingente de información que hay disponible a través del ISTAC [`r fa("external-link-alt", fill = "#43418a")`](http://www.gobiernodecanarias.org/istac/) resulta necesario fomentar el conocimiento y la difusión del mismo.
 
 Con este fin se ha elaborado la aplicación Panel de Indicadores de Turismo de Lanzarote [`r fa("external-link-alt", fill = "#43418a")`](https://datosdelanzarote.shinyapps.io/turismo_dashboard/) que pretende ser un ejemplo de las posibilidades que ofrece la explotación de los datos en R.
 
-Esta aplicación emplea el la API ISTACbase a través de la librería istacbaser. Se usa la información obtenida de la Encuesta de Gasto Turístico de Canarias.
 
 
 ---
@@ -355,7 +356,7 @@ La informacion sobre la serie de llegadas proporcionadas por FRONTUR puede ser c
 
 ### Gasto
 
-La información de gasto analiza el gasto total, el gasto por turista y el gasto por turista y día. La evolución del gasto de los principales mercados de origen proviene de la Encuesta de Gasto Turístico. La evolución se puede analizar con frecuencia anual o trimestral. Existen varios filtros para analizar el mercado de origen incluso con un desglose por concepto de gasto.
+La información de gasto analiza el gasto total, el gasto por turista y el gasto por turista y día. La evolución del gasto de los principales mercados de origen proviene de la Encuesta de Gasto Turístico. La evolución se puede analizar con frecuencia anual o trimestral. Existen varios filtros para analizar el mercado de origen, incluso con un desglose por concepto de gasto.
 
 ![Gasto medio por turista y día](images/gasto.png)
 
@@ -383,7 +384,7 @@ Con el perfil del turista se intenta analizar las características del turista e
 
 
 ---
-![Mapa de oferta aljativa por municipios](images/mapa.png)
+![Mapa de oferta alojativa por municipios](images/mapa.png)
 
 ---
 
@@ -403,18 +404,19 @@ class: inverse, middle, center
 
 - El sector público está tomando conciencia de la necesidad de que sus datos estén abiertos.
 
-- Desarrollo de una librería de R que manejase la API ISTACbase
+- Desarrollo de una librería de R que manejase la API ISTACbase.
 
-- Desarrollo del 'Panel de Indicadores de Turismo de Lanzarorte'
+- Desarrollo del 'Panel de Indicadores de Turismo de Lanzarote'.
     - Brinda a los profesionales del sector toda la información relacionada con el turismo de Lanzarote en un solo lugar para su consulta y análisis.
     
-- *Limitaciones*
-    - Cambios en la API.
+- **Limitaciones**
+    - Cambios en la API
 
 ---
 class: inverse, middle, center
 
-# Panel de datos de Turismo de Lanzarote: Una aplicación de datos abiertos en la administración pública
+# Desarrollo de dashboard para la monitorización de datos en destino turístico.
+## El caso del Panel de Indicadores de Turismo de Lanzarote
 
 Christian González-Martel `r fa("twitter", fill = "white")` `r fa("github", fill = "white")` @chrglez
 
